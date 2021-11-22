@@ -2,7 +2,7 @@
 Global:
   checkpoints: null
   pretrained_model: null
-  output_dir: ./output/
+  output_dir: ./cub_output/
   device: gpu
   save_interval: 10
   eval_during_train: True

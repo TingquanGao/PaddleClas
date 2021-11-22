@@ -2,7 +2,7 @@
 Global:
   checkpoints: null
   pretrained_model: null
-  output_dir: ./output/
+  output_dir: ./cars_output/
   device: gpu
   save_interval: 10
   eval_during_train: True
@@ -30,7 +30,7 @@ Arch:
   Head:
     name: ArcMargin  
     embedding_size: 512
-    class_num: 11319
+    class_num: 99
     margin: 0.15
     scale: 30
   infer_output_key: features
@@ -67,8 +67,8 @@ DataLoader:
   Train:
     dataset:
       name: VeriWild
-      image_root: ./dataset/SOP/
-      cls_label_path: ./dataset/SOP/train_list.txt
+      image_root: ./dataset/Cars/
+      cls_label_path: ./dataset/Cars/train_list.txt
       transform_ops:
         - DecodeImage:
             to_rgb: True
@@ -101,8 +101,8 @@ DataLoader:
     Query:
       dataset: 
         name: VeriWild
-        image_root: ./dataset/SOP/
-        cls_label_path: ./dataset/SOP/test_list.txt
+        image_root: ./dataset/Cars/
+        cls_label_path: ./dataset/Cars/test_list.txt
         transform_ops:
           - DecodeImage:
               to_rgb: True
@@ -126,8 +126,8 @@ DataLoader:
     Gallery:
       dataset: 
         name: VeriWild
-        image_root: ./dataset/SOP/
-        cls_label_path: ./dataset/SOP/test_list.txt
+        image_root: ./dataset/Cars/
+        cls_label_path: ./dataset/Cars/test_list.txt
         transform_ops:
           - DecodeImage:
               to_rgb: True
