@@ -56,7 +56,7 @@ class Engine(object):
                                                    "classification")
         if "Head" in self.config["Arch"] or self.config["Arch"].get("is_rec",
                                                                     False):
-            self.is_rec = True
+            self.is_rec = False
         else:
             self.is_rec = False
 

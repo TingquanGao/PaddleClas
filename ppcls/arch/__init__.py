@@ -85,6 +85,7 @@ class RecModel(TheseusLayer):
     def forward(self, x, label=None):
         out = dict()
         x = self.backbone(x)
+        x.stop_gradient = True
         out["backbone"] = x
         if self.neck is not None:
             x = self.neck(x)
