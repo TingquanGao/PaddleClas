@@ -539,7 +539,7 @@ class Engine(object):
                 })
             paddle.set_flags(AMP_RELATED_FLAGS_SETTING)
 
-            use_promote = amp_config.get("use_promote", False)
+            use_promote = amp_config.get("use_promote", True)
             amp_level = amp_config.get("level", "O1")
             if amp_level not in ["O1", "O2"]:
                 msg = "[Parameter Error]: The optimize level of AMP only support 'O1' and 'O2'. The level has been set 'O1'."
